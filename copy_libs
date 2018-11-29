@@ -1,0 +1,12 @@
+declare -a csc=( "ATArchiver"
+		 "MTArchiver"
+		 "CatchupArchiver"
+		 "PromptProcessing"
+		 "ATCamera"
+		 "MTCamera"
+		 "EFD")
+for i in ${csc[@]}
+do
+    lib="libsacpp_"$i"_types.so"
+    cp /opt/sal/ts_sal/test/$i/cpp/$lib /opt/sal/ts_sal/lsstsal/lib/
+done
