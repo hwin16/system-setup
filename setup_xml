@@ -18,7 +18,7 @@ for i in ${csc[@]}
 do
     cp /opt/sal/ts_xml/sal_interfaces/$i/* .
     salgenerator $i validate
-    salgenerator $i htmlv
+    salgenerator $i html
     salgenerator $i sal cpp 
     salgenerator $i python
     cp /opt/sal/ts_sal/test/$i/cpp/libsacpp_$i_types.so /opt/sal/ts_sal/lsstsal/lib/
