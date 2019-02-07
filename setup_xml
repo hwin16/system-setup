@@ -21,5 +21,6 @@ do
     salgenerator $i html
     salgenerator $i sal cpp 
     salgenerator $i python
-    cp /opt/sal/ts_sal/test/$i/cpp/libsacpp_$i_types.so /opt/sal/ts_sal/lsstsal/lib/
+    lib="libsacpp_"$i"_types.so"
+    cp /opt/sal/ts_sal/test/$i/cpp/$lib /opt/sal/ts_sal/lsstsal/lib/
 done
