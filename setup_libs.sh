@@ -1,0 +1,38 @@
+# need sudo
+mkdir -p ~/downloads
+
+# download yaml-cpp
+cd ~/downloads
+wget https://github.com/jbeder/yaml-cpp/archive/yaml-cpp-0.5.3.tar.gz
+tar zxvf yaml-cpp-0.5.3.tar.gz
+cd yaml-cpp-yaml-cpp-0.5.3/
+mkdir build && cd build
+cmake ..
+cmake --build . --target install
+
+# download rabbitmq
+cd ~/downloads
+wget https://github.com/alanxz/rabbitmq-c/releases/download/v0.8.0/rabbitmq-c-0.8.0.tar.gz
+tar zxvf rabbitmq-c-0.8.0.tar.gz
+cd rabbitmq-c-0.8.0/
+mkdir build && cd build
+cmake ..
+cmake --build . --target install
+
+# download SimpleAmqpClient
+cd ~/downloads
+wget https://github.com/alanxz/SimpleAmqpClient/archive/v2.4.0.tar.gz
+tar zxvf v2.4.0.tar.gz
+cd SimpleAmqpClient-2.4.0/
+mkdir build && cd build
+cmake ..
+cmake --build . --target install
+
+# download cfitsio
+cd ~/downloads
+wget http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio3450.tar.gz
+tar zxvf cfitsio3450.tar.gz
+cd cfitsio/
+mkdir build && cd build
+cmake ..
+cmake --build . --target install
