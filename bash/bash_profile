@@ -1,0 +1,9 @@
+# export vimrc 
+export MYVIMRC="~/.vimrc" 
+
+# OSX 
+# alias
+alias ls="ls -lhG"
+
+# Linux
+# alias ls="ls -lh --color=auto"
