@@ -5,6 +5,7 @@
 BLUE="\033[1;34m"
 CRESET="\033[0m"
 DONE="[${BLUE}DONE${CRESET}]"
+DATE=$(date +%Y-%m-%d)
 
 # setupmenu
 menu() { 
@@ -16,6 +17,7 @@ menu() {
 
 # setting up bash_profile
 setup_bash() { 
+    cp ~/.bash_profile ~/.bash_profile-${DATE}
     cat bash/bash_profile >> ~/.bash_profile
     source ~/.bash_profile
     echo -e "${DONE} Finished setting up bash_profile" 

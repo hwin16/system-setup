@@ -1,6 +1,5 @@
 " line numbers
 set number
-set nocompatible
 set ruler
 
 " python tabs
@@ -26,13 +25,30 @@ endif
 " Install Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/vim-plug')
-    " deoplete -- autocomplete
-    Plug 'Shougo/deoplete.nvim'
+    "deoplete -- autocomplete
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'ncm2/ncm2'
+
+    "ncm2 completion sources
+    Plug 'ncm2/ncm2-bufword'
+    Plug 'ncm2/ncm2-path'
+    Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:deoplete#enable_at_startup = 1
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information 
+set completeopt=noinsert,menuone,noselect
+
+set shortmess+=c
+
+inoremap <c-c> <ESC>
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
