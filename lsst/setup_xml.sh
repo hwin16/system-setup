@@ -1,9 +1,7 @@
-source /opt/sal/ts_sal/setup.env
-
-cd /opt/sal/ts_sal/test
+cd $LSST_SDK_INSTALL/ts_sal/test
 echo "[x] Redirected to ts_sal/test"
 
-cp /opt/sal/ts_xml/sal_interfaces/SAL* .
+cp $LSST_SDK_INSTALL/ts_xml/sal_interfaces/SAL* .
 echo "[x] Copied Generics" 
 
 declare -a csc=( "ATArchiver"
@@ -16,11 +14,10 @@ declare -a csc=( "ATArchiver"
 
 for i in ${csc[@]}
 do
-    cp /opt/sal/ts_xml/sal_interfaces/$i/* .
+    cp $LSST_SDK_INSTALL/ts_xml/sal_interfaces/$i/* .
     salgenerator $i validate
     salgenerator $i html
     salgenerator $i sal cpp 
     salgenerator $i python
-    lib="libsacpp_"$i"_types.so"
-    cp /opt/sal/ts_sal/test/$i/cpp/$lib /opt/sal/ts_sal/lsstsal/lib/
+    salgenerator $i lib
 done
