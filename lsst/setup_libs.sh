@@ -1,6 +1,14 @@
 # need sudo
 mkdir -p ~/downloads
 
+# download boost 1.66
+cd ~/downloads
+wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
+tar zxvf boost_1_66_0.tar.gz
+cd boost_1_66_0
+./bootstrap.sh --prefix=/opt/lsst
+./b2 install
+
 # download yaml-cpp
 cd ~/downloads
 wget https://github.com/jbeder/yaml-cpp/archive/yaml-cpp-0.5.3.tar.gz
