@@ -1,9 +1,3 @@
-# export vimrc 
-export MYVIMRC="~/.vimrc" 
-
-# OSX 
-# alias
-alias ls="ls -lhG"
-
-# Linux
-# alias ls="ls -lh --color=auto"
+# aliases
+alias ls='ls -lh --color=auto'
+alias vi='vim'
